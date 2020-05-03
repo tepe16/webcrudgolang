@@ -1,0 +1,54 @@
+{{define "EditKaryawan"}}
+  {{template "Header"}}
+  <div class="content">      
+     <div class="animated fadeIn">
+            <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong>Form Edit Karyawan</strong> 
+                        </div>
+                        <div class="card-body card-block">
+                            <form action="update_karyawan" method="post" enctype="multipart/form-data" class="form-horizontal">
+                               
+    
+                                <div class="row form-group">
+                                        <input type="hidden" id="nama-input" name="id_karyawan" placeholder="Masukan Nama" class="form-control" value="{{.Id_Kar}}">
+                                    <div class="col col-md-3"><label for="nama-input" class=" form-control-label">Nama Karyawan</label></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="nama-input" name="nama_karyawan" placeholder="Masukan Nama" class="form-control" value="{{.NamaKaryawan}}"></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="alamat-input" class=" form-control-label">Alamat Karyawan</label></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="alamat-input" name="alamat" placeholder="Masukan Alamat" class="form-control" value="{{.Alamat}}"></div>
+                                </div>
+                                <div class="row form-group">
+                                        <div class="col col-md-3"><label for="telepon-input" class=" form-control-label">No Telepon</label></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="no_telp-input" name="no_hp" placeholder="Masukan No Telepon" class="form-control" value="{{.No_Hp}}"></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="email-input" class=" form-control-label">Email</label></div>
+                                    <div class="col-12 col-md-9"><input type="email" id="email-input" name="email" placeholder="Masukan Email" class="form-control" value="{{.Email}}"></div>
+                                </div>
+                               
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="file-input" class=" form-control-label">Pilih Gambar</label></div>
+                                    <div class="col-12 col-md-9"><input type="file" id="file-input" name="gambar" class="form-control-file"></div>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary btn-sm" value="Tambah Karyawan" name="tambah_karyawan">
+                                        <i class="fa fa-dot-circle-o"></i> Submit
+                                    </button>
+                                    <button type="reset" class="btn btn-danger btn-sm">
+                                        <i class="fa fa-ban"></i> Reset
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    </div>
+                </div>
+           
+     </div>
+  </div>
+  {{template "Footer"}}
+{{end}}

@@ -1,0 +1,50 @@
+
+{{define "LihatKaryawan"}}
+{{template "Header"}}
+<h2><center>CRUD GOLANG MYSQL</center></h2>
+<div class="content">      
+    <div class="animated fadeIn">          
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Daftar Nama Karyawan</strong>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">Nama Karyawan</th>
+                                    <th scope="col">Alamat</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">No Telepon</th>
+                                    <th scope="col">Gambar</th>
+                                    <th scope="col">Opsi</th>
+                                
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{ range . }}
+                                <tr>
+                            
+                                        <td>{{ .Id }}</td>
+                                    <td>{{ .NamaKaryawan }}</td>
+                                    <td>{{ .Alamat }}</td>
+                                    <td>{{ .Email }}</td>
+                                    <td>{{ .No_Hp }}</td>
+                                    <td><img src="images/{{ .Gambar }}" width="75px" height="75px"></td>
+                                    <td><a href="hapus_karyawan?id_karyawan={{ .Id_Kar }}"><button type="button" class="btn btn-success">Hapus</button></a></td>
+                                    <td><a href="edit_karyawan?id_karyawan={{.Id_Kar}}"><button type="button" class="btn btn-primary">Edit</button></a></td>
+                                    <td><a href="detail_karyawan?id_karyawan={{.Id_Kar}}"><button type="button" class="btn btn-danger">Detail</button></a></td>
+                                   
+                                </tr>
+                               {{ end }}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>    
+      </div>
+</div>
+{{template "Footer"}}
+{{ end }}
